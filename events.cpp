@@ -21,13 +21,16 @@ void events_class::events(SDL_Event* e)
         game->set_running(false);
     }
     if(e->type == SDL_KEYDOWN) {
-        switch(e->key.keysym.sym){
+        /*switch(e->key.keysym.sym){
                 case SDLK_UP:
                     //0+99;
-                    std::cout<<28<<"\n";
+                    //std::cout<<28<<"\n";
                     break;
                 default:
                     break;
+        }*/
+        if(e->key.keysym.sym==SDLK_UP||e->key.keysym.sym==SDLK_DOWN){
+            game->get_player_one().handle_event(e);
         }
     }
 }

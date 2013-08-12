@@ -1,5 +1,7 @@
 #include "paddle.h"
 #include "render_tools.h"
+#include "tools.h"
+#include <iostream>
 paddle::paddle()
 {
     position.x=0;
@@ -36,13 +38,32 @@ void paddle::load_paddle()
 }
 void paddle::move_down()
 {
-
+    change_vec2_y(&position, 10);
 }
 void paddle::move_up()
 {
-
+    change_vec2_y(&position, -10);
 }
 void paddle::render(SDL_Surface* screen)
 {
     apply_surface(position,paddle_surface,screen);
+}
+void paddle::handle_event(SDL_Event* event)
+{
+    if(event->type == SDL_KEYDOWN) {
+        switch(event->key.keysym.sym){
+                case SDLK_UP:
+                    //0+99;
+                    std::cout<<56<<"\n";
+                    move_up();
+                    break;
+                case SDLK_DOWN:
+                    //0+99;
+                    std::cout<<68<<"\n";
+                    move_down();
+                    break;
+                default:
+                    break;
+        }
+    }
 }

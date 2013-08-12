@@ -34,3 +34,7 @@ void game_class::render()
     player_one.render(get_screen());
     SDL_Flip(get_screen());
 }
+paddle game_class::get_player_one()
+{
+    return player_one;
+}

@@ -15,5 +15,6 @@ class paddle{
         void re_load_paddle();
         void move(directions direction);
         void render(SDL_Surface* screen);
+        void handle_event(SDL_Event* event);
 };
 #endif // PADDLE_H_INCLUDED

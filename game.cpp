@@ -22,6 +22,7 @@ void game_class::game_loop()
 {
     while(running==true){
         events->event_loop();
+        render();
     }
 }
 void game_class::set_running(bool new_running)
@@ -30,5 +31,6 @@ void game_class::set_running(bool new_running)
 }
 void game_class::render()
 {
-
+    player_one.render(get_screen());
+    SDL_Flip(get_screen());
 }

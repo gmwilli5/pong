@@ -3,12 +3,14 @@
 #include "SDL/SDL.h"
 #include "window.h"
 #include "events.h"
+#include "paddle.h"
 class events_class;
 class game_class{
     private:
         window_class window;
         bool running;
         events_class* events;
+        paddle player_one;
     public:
         game_class();
         ~game_class();

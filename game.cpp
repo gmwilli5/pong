@@ -1,4 +1,5 @@
 #include "game.h"
+#include <iostream>
 game_class::game_class()
 {
     window.reinnit(600,500,32);
@@ -31,6 +32,7 @@ void game_class::set_running(bool new_running)
 }
 void game_class::render()
 {
+    //std::cout<<34<<"\n";
     player_one.render(get_screen());
     SDL_Flip(get_screen());
 }

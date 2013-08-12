@@ -4,8 +4,8 @@
 #include <iostream>
 paddle::paddle()
 {
-    position.x=0;
-    position.y=0;
+    position.x=10;
+    position.y=10;
     paddle_surface=NULL;
     load_paddle();
 }
@@ -38,15 +38,24 @@ void paddle::load_paddle()
 }
 void paddle::move_down()
 {
-    change_vec2_y(&position, 10);
+    //change_vec2_y(&position, 10);
+    ///std::cout<<position.x<<","<<position.y<<"\n";
+    position.y+=10;
+    ///std::cout<<position.x<<","<<position.y<<"\n";
 }
 void paddle::move_up()
 {
-    change_vec2_y(&position, -10);
+    //change_vec2_y(&position, -10);
+    ///std::cout<<position.x<<","<<position.y<<"\n";
+    position.y-=10;
+    ///std::cout<<position.x<<","<<position.y<<"\n";
 }
 void paddle::render(SDL_Surface* screen)
 {
-    apply_surface(position,paddle_surface,screen);
+    if(position.y!=10){
+        std::cout<<position.x<<","<<position.y<<"\n";
+    }
+    apply_surface(position.x,position.y,paddle_surface,screen);
 }
 void paddle::handle_event(SDL_Event* event)
 {

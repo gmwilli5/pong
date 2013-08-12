@@ -7,6 +7,9 @@ class paddle{
         SDL_Surface* paddle;
         vec2 position;
         void load_paddle();
+    private:
+        void move_down();
+        void move_up();
     public:
         void re_load_paddle();
         void move(directions direction);

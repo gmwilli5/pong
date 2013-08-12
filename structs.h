@@ -4,6 +4,8 @@ struct vec2{
     short int x;
     short int y;
 };
+void change_vec2_x(vec2* vec, short int change);
+void change_vec2_y(vec2* vec, short int change);
 enum directions{
     up,
     down,

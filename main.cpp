@@ -5,5 +5,6 @@
 int main()
 {
     game_class g;
-    while(1){}
+    g.game_loop();
+    //while(1){}
 }

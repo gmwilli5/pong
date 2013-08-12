@@ -7,6 +7,7 @@ paddle::paddle()
     position.x=10;
     position.y=10;
     paddle_surface=NULL;
+    dirc=none;
     load_paddle();
 }
 void paddle::re_load_paddle()
@@ -29,6 +30,22 @@ void paddle::move(directions direction)
         }
     }
 }
+void paddle::move()
+{
+    if(dirc!=up&&dirc!=down){
+        return;
+    }
+    else{
+        if(dirc==up){
+            move_down();
+            return;
+        }
+        if(dirc==down){
+            move_up();
+            return;
+        }
+    }
+}
 void paddle::load_paddle()
 {
     /*SDL_Rect temp;
@@ -40,14 +57,14 @@ void paddle::move_down()
 {
     //change_vec2_y(&position, 10);
     ///std::cout<<position.x<<","<<position.y<<"\n";
-    position.y+=10;
+    position.y=position.y+10;
     ///std::cout<<position.x<<","<<position.y<<"\n";
 }
 void paddle::move_up()
 {
     //change_vec2_y(&position, -10);
     ///std::cout<<position.x<<","<<position.y<<"\n";
-    position.y-=10;
+    position.y=position.y-10;
     ///std::cout<<position.x<<","<<position.y<<"\n";
 }
 void paddle::render(SDL_Surface* screen)
@@ -64,15 +81,23 @@ void paddle::handle_event(SDL_Event* event)
                 case SDLK_UP:
                     //0+99;
                     std::cout<<56<<"\n";
-                    move_up();
+                    //move_up();
+                    dirc=up;
                     break;
                 case SDLK_DOWN:
                     //0+99;
                     std::cout<<68<<"\n";
-                    move_down();
+                    dirc=down;
+                    //move_down();
                     break;
                 default:
                     break;
         }
+    }
+}
+void paddle::update()
+{
+    if(dirc!=none){
+        move();
     }
 }

@@ -9,6 +9,7 @@ void change_vec2_y(vec2* vec, short int change);
 void change_vec2(vec2* vec, short int change_x,short int change_y);
 vec2 operator+(vec2 a, vec2 b);
 enum directions{
+    none,
     up,
     down,
     left,

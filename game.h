@@ -10,7 +10,7 @@ class game_class{
         window_class window;
         bool running;
         events_class* events;
-        paddle player_one;
+        paddle* player_one;
     public:
         game_class();
         ~game_class();
@@ -20,5 +20,6 @@ class game_class{
         void game_loop();
         void set_running(bool new_running);
         void render();
+        void update();
 };
 #endif // GAME_H_INCLUDED

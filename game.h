@@ -16,5 +16,6 @@ class game_class{
         window_class get_window();
         void game_loop();
         void set_running(bool new_running);
+        void render();
 };
 #endif // GAME_H_INCLUDED

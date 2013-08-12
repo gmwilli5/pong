@@ -28,3 +28,7 @@ void game_class::set_running(bool new_running)
 {
     running=new_running;
 }
+void game_class::render()
+{
+
+}

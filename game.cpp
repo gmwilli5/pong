@@ -65,3 +65,11 @@ vec2 game_class::get_p1_pos()
 {
     return p1_pos;
 }
+bool game_class::get_running()
+{
+    return running;
+}
+events_class* game_class::get_events()
+{
+    return events;
+}

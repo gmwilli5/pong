@@ -24,6 +24,8 @@ class game_class{
         void render();
         void update();
         void set_p1_pos(short int x,short int y);
+        bool get_running();
         vec2 get_p1_pos();
+        events_class* get_events();
 };
 #endif // GAME_H_INCLUDED

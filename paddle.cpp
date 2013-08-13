@@ -7,7 +7,8 @@ paddle::paddle()
     position.x=10;
     position.y=10;
     paddle_surface=NULL;
-    dirc=none;
+    //dirc=down;
+    dirc=new directions;
     load_paddle();
 }
 void paddle::re_load_paddle()
@@ -46,7 +47,14 @@ void paddle::move()
         }
     //}*/
     //std::cout<<dirc<<"\n";
-    switch(dirc){
+    //move_down();
+    if(*dirc==up){
+        move_up();
+    }
+    if(*dirc==down){
+        move_down();
+    }
+    switch(*dirc){
         std::cout<<50<<"\n";
         case up:
             move_up();
@@ -71,7 +79,9 @@ void paddle::move_down()
     //std::cout<<position.x<<","<<position.y<<"\n";
     //position.y=position.y+10;
     //std::cout<<position.x<<","<<position.y<<"\n";
+    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
     game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y+10));
+    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
 }
 void paddle::move_up()
 {
@@ -79,7 +89,9 @@ void paddle::move_up()
     //std::cout<<position.x<<","<<position.y<<"\n";
     //position.y=position.y-10;
     //std::cout<<position.x<<","<<position.y<<"\n";
+    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
     game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y-10));
+    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
 }
 void paddle::render(SDL_Surface* screen)
 {
@@ -96,8 +108,9 @@ void paddle::handle_event(SDL_Event* event)
                 case SDLK_UP:
                     //0+99;
                     std::cout<<56<<"\n";
-                    set_direction(up);
-                    std::cout<<dirc<<"\n";
+                    //set_direction(up);
+                    *dirc=up;
+                    std::cout<<*dirc<<"\n";
                     //move_up();
                     //dirc=up;
                     break;
@@ -105,8 +118,10 @@ void paddle::handle_event(SDL_Event* event)
                     //0+99;
                     std::cout<<68<<"\n";
                     //dirc=down;
-                    set_direction(down);
-                    std::cout<<dirc<<"\n";
+                    //set_direction(down);
+                    std::cout<<*dirc<<"\n";
+                    *dirc=down;
+                    std::cout<<*dirc<<"\n";
                     //move_down();
                     break;
                 default:
@@ -118,16 +133,16 @@ void paddle::update()
 {
     //std::cout<<110<<"\n";
     move();
-    if(dirc!=0){
-        std::cout<<dirc<<"\n";
+    if(*dirc!=0){
+        std::cout<<*dirc<<"\n";
     }
     //std::cout<<dirc<<"\n";
 }
 void paddle::set_direction(directions new_dirc)
 {
-    std::cout<<dirc<<"\n";
-    dirc=new_dirc;
-    std::cout<<dirc<<"\n";
+    std::cout<<*dirc<<"\n";
+    *dirc=new_dirc;
+    std::cout<<*dirc<<"\n";
     std::cout<<120<<"\n";
 }
 void paddle::set_game(game_class* new_game)

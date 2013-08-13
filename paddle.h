@@ -8,7 +8,7 @@ class paddle{
     private:
         SDL_Surface* paddle_surface;
         vec2 position;
-        directions dirc;
+        directions* dirc;
         game_class* game;
     private:
         void load_paddle();

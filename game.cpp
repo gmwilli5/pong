@@ -26,14 +26,14 @@ window_class game_class::get_window()
 }
 void game_class::game_loop()
 {
-    std::cout<<player_one<<"\n";
-    int t=player_one;
-    std::cout<<t<<"\n";
+    //std::cout<<player_one<<"\n";
+    //int t=player_one;
+    //std::cout<<t<<"\n";
     while(running==true){
         events->event_loop();
-        if(player_one!=t){
-            std::cout<<player_one<<"\n";
-        }
+        //if(player_one!=t){
+            //std::cout<<player_one<<"\n";
+        //}
         update();
         render();
     }
@@ -45,6 +45,7 @@ void game_class::set_running(bool new_running)
 void game_class::render()
 {
     //std::cout<<34<<"\n";
+    window.render();
     player_one->render(get_screen());
     SDL_Flip(get_screen());
 }

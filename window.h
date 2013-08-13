@@ -10,6 +10,7 @@ class window_class{
         SDL_Surface* get_screen();
         void set_screen(SDL_Surface* new_screen);
         void reinnit(int width,int height,int bpp);
+        void render();
         ~window_class();
 };
 #endif // WINDOW_H_INCLUDED

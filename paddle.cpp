@@ -4,8 +4,8 @@
 #include <iostream>
 paddle::paddle()
 {
-    position.x=10;
-    position.y=10;
+    position.x=0;
+    position.y=0;
     paddle_surface=NULL;
     //dirc=down;
     dirc=new directions;
@@ -77,29 +77,29 @@ void paddle::move_down()
 {
     //change_vec2_y(&position, 10);
     //std::cout<<position.x<<","<<position.y<<"\n";
-    //position.y=position.y+10;
+    position.y=position.y+1;
     //std::cout<<position.x<<","<<position.y<<"\n";
-    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
-    game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y+10));
-    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
+    //std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
+    //game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y+10));
+    //std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
 }
 void paddle::move_up()
 {
     //change_vec2_y(&position, -10);
     //std::cout<<position.x<<","<<position.y<<"\n";
-    //position.y=position.y-10;
+    position.y=position.y-1;
     //std::cout<<position.x<<","<<position.y<<"\n";
-    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
-    game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y-10));
-    std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
+    //std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
+    //game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y-10));
+    //std::cout<<game->get_p1_pos().x<<","<<game->get_p1_pos().y<<"\n";
 }
 void paddle::render(SDL_Surface* screen)
 {
     if(position.y!=10){
         std::cout<<position.x<<","<<position.y<<"\n";
     }
-    //apply_surface(position.x,position.y,paddle_surface,screen);
-    apply_surface(game->get_p1_pos().x,game->get_p1_pos().y,paddle_surface,screen);
+    apply_surface(position.x,position.y,paddle_surface,screen);
+    //apply_surface(game->get_p1_pos().x,game->get_p1_pos().y,paddle_surface,screen);
 }
 void paddle::handle_event(SDL_Event* event)
 {

@@ -5,9 +5,9 @@
 int main()
 {
     game_class g;
-    //g.game_loop();
+    g.game_loop();
     //while(1){}
-    while(g.get_running()==true){
+    /*while(g.get_running()==true){
         //g.events();
         //std::cout<<player_one<<"\n";
         //int t=player_one;
@@ -20,5 +20,5 @@ int main()
         g.update();
         g.render();
         //}
-    }
+    }*/
 }

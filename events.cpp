@@ -32,6 +32,9 @@ void events_class::events(SDL_Event* e)
         if(e->key.keysym.sym==SDLK_UP||e->key.keysym.sym==SDLK_DOWN){
             game->get_player_one().handle_event(e);
         }
+        if(e->key.keysym.sym==SDLK_s||e->key.keysym.sym==SDLK_w){
+            game->get_player_two().handle_event(e);
+        }
     }
 }
 void events_class::set_game(game_class* new_game)

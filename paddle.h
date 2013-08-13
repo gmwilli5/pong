@@ -16,6 +16,7 @@ class paddle{
         void move_up();
         void move();
         void set_direction(directions new_dirc);
+        void position_check();
     public:
         paddle();
         void re_load_paddle();
@@ -24,5 +25,6 @@ class paddle{
         void handle_event(SDL_Event* event);
         void update();
         void set_game(game_class* new_game);
+        void set_position(short int x,short int y);
 };
 #endif // PADDLE_H_INCLUDED

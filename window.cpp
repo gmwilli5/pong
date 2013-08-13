@@ -26,6 +26,6 @@ window_class::~window_class()
 void window_class::render()
 {
     SDL_Rect temp;
-    temp={0,0,500,600};
+    temp={0,0,600,500};
     SDL_FillRect(screen,&temp,0);
 }

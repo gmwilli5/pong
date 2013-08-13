@@ -12,6 +12,7 @@ class paddle{
         void move_down();
         void move_up();
         void move();
+        void set_direction(directions new_dirc);
     public:
         paddle();
         void re_load_paddle();

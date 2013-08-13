@@ -32,10 +32,10 @@ void paddle::move(directions direction)
 }
 void paddle::move()
 {
-    if(dirc!=up&&dirc!=down){
+    /*if(dirc!=up&&dirc!=down){
         return;
     }
-    else{
+    //else{
         if(dirc==up){
             move_down();
             return;
@@ -44,6 +44,18 @@ void paddle::move()
             move_up();
             return;
         }
+    //}*/
+    //std::cout<<dirc<<"\n";
+    switch(dirc){
+        std::cout<<50<<"\n";
+        case up:
+            move_up();
+            break;
+        case down:
+            move_down();
+            break;
+        default:
+            break;
     }
 }
 void paddle::load_paddle()
@@ -56,16 +68,16 @@ void paddle::load_paddle()
 void paddle::move_down()
 {
     //change_vec2_y(&position, 10);
-    ///std::cout<<position.x<<","<<position.y<<"\n";
+    std::cout<<position.x<<","<<position.y<<"\n";
     position.y=position.y+10;
-    ///std::cout<<position.x<<","<<position.y<<"\n";
+    std::cout<<position.x<<","<<position.y<<"\n";
 }
 void paddle::move_up()
 {
     //change_vec2_y(&position, -10);
-    ///std::cout<<position.x<<","<<position.y<<"\n";
+    std::cout<<position.x<<","<<position.y<<"\n";
     position.y=position.y-10;
-    ///std::cout<<position.x<<","<<position.y<<"\n";
+    std::cout<<position.x<<","<<position.y<<"\n";
 }
 void paddle::render(SDL_Surface* screen)
 {
@@ -81,13 +93,17 @@ void paddle::handle_event(SDL_Event* event)
                 case SDLK_UP:
                     //0+99;
                     std::cout<<56<<"\n";
+                    set_direction(up);
+                    std::cout<<dirc<<"\n";
                     //move_up();
-                    dirc=up;
+                    //dirc=up;
                     break;
                 case SDLK_DOWN:
                     //0+99;
                     std::cout<<68<<"\n";
-                    dirc=down;
+                    //dirc=down;
+                    set_direction(down);
+                    std::cout<<dirc<<"\n";
                     //move_down();
                     break;
                 default:
@@ -97,7 +113,17 @@ void paddle::handle_event(SDL_Event* event)
 }
 void paddle::update()
 {
-    if(dirc!=none){
-        move();
+    //std::cout<<110<<"\n";
+    move();
+    if(dirc!=0){
+        std::cout<<dirc<<"\n";
     }
+    //std::cout<<dirc<<"\n";
+}
+void paddle::set_direction(directions new_dirc)
+{
+    std::cout<<dirc<<"\n";
+    dirc=new_dirc;
+    std::cout<<dirc<<"\n";
+    std::cout<<120<<"\n";
 }

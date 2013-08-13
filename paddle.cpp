@@ -68,23 +68,26 @@ void paddle::load_paddle()
 void paddle::move_down()
 {
     //change_vec2_y(&position, 10);
-    std::cout<<position.x<<","<<position.y<<"\n";
-    position.y=position.y+10;
-    std::cout<<position.x<<","<<position.y<<"\n";
+    //std::cout<<position.x<<","<<position.y<<"\n";
+    //position.y=position.y+10;
+    //std::cout<<position.x<<","<<position.y<<"\n";
+    game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y+10));
 }
 void paddle::move_up()
 {
     //change_vec2_y(&position, -10);
-    std::cout<<position.x<<","<<position.y<<"\n";
-    position.y=position.y-10;
-    std::cout<<position.x<<","<<position.y<<"\n";
+    //std::cout<<position.x<<","<<position.y<<"\n";
+    //position.y=position.y-10;
+    //std::cout<<position.x<<","<<position.y<<"\n";
+    game->set_p1_pos(game->get_p1_pos().x,(game->get_p1_pos().y-10));
 }
 void paddle::render(SDL_Surface* screen)
 {
     if(position.y!=10){
         std::cout<<position.x<<","<<position.y<<"\n";
     }
-    apply_surface(position.x,position.y,paddle_surface,screen);
+    //apply_surface(position.x,position.y,paddle_surface,screen);
+    apply_surface(game->get_p1_pos().x,game->get_p1_pos().y,paddle_surface,screen);
 }
 void paddle::handle_event(SDL_Event* event)
 {
@@ -126,4 +129,8 @@ void paddle::set_direction(directions new_dirc)
     dirc=new_dirc;
     std::cout<<dirc<<"\n";
     std::cout<<120<<"\n";
+}
+void paddle::set_game(game_class* new_game)
+{
+    game=new_game;
 }

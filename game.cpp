@@ -7,6 +7,9 @@ game_class::game_class()
     events=new events_class;
     events->set_game(this);
     player_one=new paddle;
+    player_one->set_game(this);
+    p1_pos.x=0;
+    p1_pos.y=0;
 }
 game_class::~game_class()
 {
@@ -52,4 +55,13 @@ paddle game_class::get_player_one()
 void game_class::update()
 {
     player_one->update();
+}
+void game_class::set_p1_pos(short int x,short int y)
+{
+    p1_pos.x=x;
+    p1_pos.y=y;
+}
+vec2 game_class::get_p1_pos()
+{
+    return p1_pos;
 }

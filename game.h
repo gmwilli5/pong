@@ -5,12 +5,14 @@
 #include "events.h"
 #include "paddle.h"
 class events_class;
+class paddle;
 class game_class{
     private:
         window_class window;
         bool running;
         events_class* events;
         paddle* player_one;
+        vec2 p1_pos;
     public:
         game_class();
         ~game_class();
@@ -21,5 +23,7 @@ class game_class{
         void set_running(bool new_running);
         void render();
         void update();
+        void set_p1_pos(short int x,short int y);
+        vec2 get_p1_pos();
 };
 #endif // GAME_H_INCLUDED

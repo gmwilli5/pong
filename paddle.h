@@ -2,11 +2,14 @@
 #define PADDLE_H_INCLUDED
 #include "SDL/SDL.h"
 #include "structs.h"
+#include "game.h"
+class game_class;
 class paddle{
     private:
         SDL_Surface* paddle_surface;
         vec2 position;
         directions dirc;
+        game_class* game;
     private:
         void load_paddle();
         void move_down();
@@ -20,5 +23,6 @@ class paddle{
         void render(SDL_Surface* screen);
         void handle_event(SDL_Event* event);
         void update();
+        void set_game(game_class* new_game);
 };
 #endif // PADDLE_H_INCLUDED

@@ -5,15 +5,14 @@
 #include "events.h"
 #include "paddle.h"
 class events_class;
-class paddle;
 class game_class{
     private:
         window_class window;
         bool running;
         events_class* events;
         //class paddle;
-        paddle* player_one;
-        paddle* player_two;
+        player::paddle* player_one;
+        player::paddle* player_two;
         vec2 p1_pos;
         vec2 p2_pos;
     public:
@@ -21,8 +20,8 @@ class game_class{
         ~game_class();
         SDL_Surface* get_screen();
         window_class get_window();
-        paddle get_player_one();
-        paddle get_player_two();
+        player::paddle get_player_one();
+        player::paddle get_player_two();
         void game_loop();
         void set_running(bool new_running);
         void render();

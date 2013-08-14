@@ -6,9 +6,9 @@ game_class::game_class()
     running=true;
     events=new events_class;
     events->set_game(this);
-    player_one=new paddle;
+    player_one=new player::paddle;
     player_one->set_game(this);
-    player_two=new paddle;
+    player_two=new player::paddle;
     player_two->set_game(this);
     player_two->set_position(570,0);
     p1_pos.x=0;
@@ -53,7 +53,7 @@ void game_class::render()
     player_two->render(get_screen());
     SDL_Flip(get_screen());
 }
-paddle game_class::get_player_one()
+player::paddle game_class::get_player_one()
 {
     return *player_one;
 }
@@ -66,7 +66,7 @@ vec2 game_class::get_p1_pos()
 {
     return p1_pos;
 }
-paddle game_class::get_player_two()
+player::paddle game_class::get_player_two()
 {
     return *player_two;
 }

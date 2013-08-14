@@ -13,6 +13,7 @@ game_class::game_class()
     player_two->set_position(570,0);
     p1_pos.x=0;
     p1_pos.y=0;
+    ball=new ball::ball_class;
 }
 game_class::~game_class()
 {

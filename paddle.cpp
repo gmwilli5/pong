@@ -184,4 +184,8 @@ namespace player{
             position.y=0;
         }
     }
+    aabb paddle::get_aabb()
+    {
+        return pos;
+    }
 }

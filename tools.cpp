@@ -19,3 +19,18 @@ vec2 operator+(vec2 a, vec2 b)
     temp.y=a.y+b.y;
     return temp;
 }
+vec2 operator+=(vec2& a, vec2 b)
+{
+    a.x+=b.x;
+    a.y+=b.y;
+    return a;
+}
+bool aabb_vs_aabb(aabb a,aabb b)
+{
+    if(a.top.x>=b.bottom.x&&a.top.x<=b.top.x){
+        if(a.top.y>=b.bottom.y&&a.top.y<=b.top.y){
+            return true;
+        }
+    }
+    return false;
+}

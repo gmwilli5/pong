@@ -11,6 +11,7 @@ class game_class{
         window_class window;
         bool running;
         events_class* events;
+        //class paddle;
         paddle* player_one;
         paddle* player_two;
         vec2 p1_pos;

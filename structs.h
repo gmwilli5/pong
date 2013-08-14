@@ -15,4 +15,14 @@ enum directions{
     left,
     right
 };
+enum collision_types{
+    wall,
+    paddle,
+    ball,
+    score,
+};
+struct aabb{
+    vec2 top;
+    vec2 bottom;
+};
 #endif // STRUCTS_H_INCLUDED

@@ -11,6 +11,7 @@ namespace player{
             vec2 position;
             directions* dirc;
             game_class* game;
+            aabb pos;
         private:
             void load_paddle();
             void move_down();
@@ -27,6 +28,7 @@ namespace player{
             void update();
             void set_game(game_class* new_game);
             void set_position(short int x,short int y);
+            aabb get_aabb();
     };
 }
 #endif // PADDLE_H_INCLUDED

@@ -9,6 +9,7 @@ void collision_class::detect_collision()
             }
         }
     }*/
+
 }
 void collision_class::resolve__collisions()
 {

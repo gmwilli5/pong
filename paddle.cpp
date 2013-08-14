@@ -10,7 +10,13 @@ namespace player{
         paddle_surface=NULL;
         //dirc=down;
         dirc=new directions;
+        c_type=new ball_collision_types;
         load_paddle();
+    }
+    paddle::~paddle()
+    {
+        delete dirc;
+        delete c_type;
     }
     void paddle::re_load_paddle()
     {

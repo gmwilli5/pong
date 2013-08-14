@@ -21,6 +21,12 @@ enum collision_types{
     ball,
     score,
 };
+enum ball_collision_types{
+    none_b,
+    wall_b,
+    goal_b,
+    paddle_b,
+};
 struct aabb{
     vec2 top;
     vec2 bottom;

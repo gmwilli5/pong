@@ -10,6 +10,7 @@ namespace player{
             SDL_Surface* paddle_surface;
             vec2 position;
             directions* dirc;
+            ball_collision_types* c_type;
             game_class* game;
             aabb pos;
         private:
@@ -21,6 +22,7 @@ namespace player{
             void position_check();
         public:
             paddle();
+            ~paddle();
             void re_load_paddle();
             void move(directions direction);
             void render(SDL_Surface* screen);
